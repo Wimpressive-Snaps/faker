@@ -1,0 +1,25 @@
+name: faker
+base: core18
+version: 'git'
+summary: Faker is a package that generates fake data for you.
+description: >
+  Faker is a Python package that generates fake data for you. Whether you
+  need to bootstrap your database, create good-looking XML documents,
+  fill-in your persistence to stress test it, or anonymize data taken from
+  a production service, Faker is for you.
+
+grade: stable
+confinement: strict
+
+parts:
+  faker:
+    plugin: python
+    source: .
+
+apps:
+  faker:
+    command: bin/faker
+    environment:
+      LC_ALL: C.UTF-8
+    plugs:
+      - home
